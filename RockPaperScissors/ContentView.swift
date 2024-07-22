@@ -19,12 +19,17 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     
     var body: some View {
+        ZStack{
+            LinearGradient(colors: [.blue, .secondary], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
         VStack{
-            Text("This time uo have to \(Text(winOrLose[0]).foregroundColor(winOrLose[0] ==  "Win" ? .green : .red ).bold()) to win")  .foregroundStyle(.black)
+        
+            
+            Text("This time you have to \(Text(winOrLose[0]).foregroundColor(winOrLose[0] ==  "Win" ? .white : .red ).bold()) to win")  .foregroundStyle(.black)
                 .font(.subheadline.weight(.heavy))
             
             Text("Choose a Option")
-                .foregroundStyle(.cyan)
+                .foregroundStyle(.white)
                 .font(.subheadline.weight(.heavy))
             
             ForEach(options.sorted(), id: \.self){ option in
@@ -51,6 +56,8 @@ struct ContentView: View {
                 Text(altText)
             }
         }
+        }
+
     
     }
     
